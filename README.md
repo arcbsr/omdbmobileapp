@@ -1,4 +1,4 @@
-# Your App Name
+# React Native Demo
 
 ## Overview
 This mobile application is built using React Native, showcasing a well-structured architecture with clean principles. It demonstrates the integration of various technologies for state management, navigation, and UI design, resulting in a responsive and user-friendly interface.
