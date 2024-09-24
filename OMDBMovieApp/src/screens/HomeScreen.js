@@ -6,6 +6,7 @@ import SearchBar from '../components/SearchBar';
 import { searchMovies, addBookmark } from '../redux/actions';
 import MovieList from '../components/MovieList';
 import LoadingModal from '../components/LoadingModal';
+import PaginationComponent from '../components/PaginationComponent';
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -40,16 +41,11 @@ const HomeScreen = () => {
     <>
       <SearchBar onSearch={handleSearch} />
       <MovieList movies={movies} />
-      <View style={styles.paginationContainer}>
-        <IconButton
-          icon="chevron-left" // Left arrow icon
-          onPress={handlePrevPage}
-          disabled={page === 1}
-        />
-        <Text style={styles.pageNumber}>Page {page}</Text>
-        <IconButton
-          icon="chevron-right" // Right arrow icon
-          onPress={handleNextPage}
+      <View>
+        <PaginationComponent
+          page={page}
+          handlePrevPage={handlePrevPage}
+          handleNextPage={handleNextPage}
         />
       </View>
       <LoadingModal visible={loading} />
